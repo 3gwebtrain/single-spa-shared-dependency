@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align: center">
+  <h1>Welcome to {{ title }}!</h1>
+  <button #button (click)="sendMessage()">Hello to Child</button>
+</div>
+<main>
+  <ul>
+    <li>
+      <h2><a [routerLink]="['/child1']">Child 1</a></h2>
+      <ul>
+        <li>
+          <a [routerLink]="['/child1/service']">Child 1 Service</a>
+        </li>
+        <li>
+          <a [routerLink]="['/child1/contact']">Child 1 Contact</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <h2><a [routerLink]="['/child2']">Child 2</a></h2>
+    </li>
+  </ul>
+  <section class="child-app">
+    <router-outlet></router-outlet>
+  </section>
+  <footer>@Copy-right:CTS</footer>
+</main>

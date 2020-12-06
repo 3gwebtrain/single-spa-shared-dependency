@@ -1,0 +1,15 @@
+main {
+  border: 1px solid gray;
+  margin: auto;
+}
+
+
+.child-app {
+  border: 3px dashed firebrick;
+  padding: 24px;
+}
+
+
+body.single-spa ul {
+    display: none;
+}
