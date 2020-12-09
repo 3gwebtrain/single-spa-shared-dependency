@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "child1": "http://localhost:3000/main.js",
-    "child2": "http://localhost:3001/main.js"
-  }
-}
