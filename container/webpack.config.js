@@ -1,3 +1,12 @@
 const webpack = require("webpack");
 
-module.exports = {};
+module.exports = {
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      test: require.resolve("jquery"),
+      options: {
+        exposes: ["$", "jQuery"],
+      },
+    }),
+  ],
+};

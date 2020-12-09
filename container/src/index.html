@@ -7,8 +7,16 @@
     <meta name="importmap-type" content="systemjs-importmap" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "child1": "http://localhost:3000/main.js",
+          "child2": "http://localhost:3001/main.js"
+        }
+      }
+    </script>
 
-    <script type="systemjs-importmap" src="/assets/import-map.json"></script>
+    <!-- <script type="systemjs-importmap" src="/assets/import-map.json"></script> -->
     <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/zone.js@0.9.1/dist/zone.min.js"></script>
@@ -36,5 +44,17 @@
   <body>
     <app-root></app-root>
     <!-- <import-map-overrides-full></import-map-overrides-full> -->
+    <script>
+      System.import("single-spa").then(function (singleSpa) {
+        console.log("singleSpa", singleSpa);
+        singleSpa.registerApplication(
+          "child1",
+          () => System.import("http://localhost:3000/main.js"),
+          () => true
+        );
+
+        singleSpa.start();
+      });
+    </script>
   </body>
 </html>
