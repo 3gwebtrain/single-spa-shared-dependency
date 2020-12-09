@@ -8,17 +8,16 @@ module.exports = (angularWebpackConfig, options) => {
   );
 
   singleSpaWebpackConfig.externals = [
-    {
-      module: ["jQuery"],
-      export: {
-        root: "jquery",
-        commonjs2: "jquery",
-        amd: "jquery",
-      },
-    },
+    /^rxjs$/,
+    /^rxjs\/operators$/,
+
+    /^zone\.js$/,
+    /^@angular\/router$/,
+    /^@angular\/compiler$/,
+    /^@angular\/common$/,
+    /^@angualr\/core$/,
+    /^@angular\/platform-browser$/,
   ];
   // Feel free to modify this webpack config however you'd like to
-  return {
-    ...singleSpaWebpackConfig,
-  };
+  return singleSpaWebpackConfig;
 };

@@ -15,7 +15,7 @@ const routes: Routes = [
       {
         path: "**",
         component: SpaHostComponent,
-        data: { app: "child1", name: "arif" },
+        data: { app: "child1", name: "child1" },
       },
     ],
   },

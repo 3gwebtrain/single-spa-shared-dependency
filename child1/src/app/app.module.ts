@@ -1,24 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ServiceComponent } from './service/service.component';
-import { ContactComponent } from './contact/contact.component';
-import { EmptyRouteComponent } from './empty-route/empty-route.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { ServiceComponent } from "./service/service.component";
+import { ContactComponent } from "./contact/contact.component";
+import { EmptyRouteComponent } from "./empty-route/empty-route.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ServiceComponent,
     ContactComponent,
-    EmptyRouteComponent
+    EmptyRouteComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
