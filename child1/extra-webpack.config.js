@@ -1,22 +1,30 @@
 const singleSpaAngularWebpack = require("single-spa-angular/lib/webpack")
   .default;
 
-module.exports = (angularWebpackConfig, options) => {
-  const singleSpaWebpackConfig = singleSpaAngularWebpack(
-    angularWebpackConfig,
-    options
-  );
+module.exports = (config, options) => {
+  const singleSpaWebpackConfig = singleSpaAngularWebpack(config, options);
 
   singleSpaWebpackConfig.externals = [
-    "/^jquery$/",
+    /^ibo\/*/,
+
+    /^single-spa$/,
+
     /^rxjs$/,
     /^rxjs\/operators$/,
+
+    // angular
+    /^@angular\/core$/,
+    /^@angular\/compiler$/,
+    /^@angular\/common$/,
+    /^@angular\/common\/http$/,
+    /^@angular\/forms$/,
+    /^@angular\/router$/,
+    /^@angular\/animations$/,
+    /^@angular\/animations\/browser/,
+    /^@angular\/platform-browser$/,
+    /^@angular\/platform-browser-dynamic$/,
+    /^@angular\/platform-browser\/animations$/,
     /^zone\.js$/,
-    /^angular\/router$/,
-    /^angular\/compiler$/,
-    /^angular\/common$/,
-    /^angualr\/core$/,
-    /^angular\/platform-browser$/,
   ];
 
   // Feel free to modify this webpack config however you'd like to

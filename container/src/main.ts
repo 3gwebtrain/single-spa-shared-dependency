@@ -10,7 +10,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-// singleSpa.start();
+singleSpa.start();
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)

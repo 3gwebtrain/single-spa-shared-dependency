@@ -15,6 +15,7 @@
         }
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
     <!-- <script type="systemjs-importmap" src="/assets/import-map.json"></script> -->
     <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
@@ -25,36 +26,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/amd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/named-exports.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/extras/named-register.min.js"></script>
-
-    <script type="systemjs-importmap">
-      {
-        "imports": {
-          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.8.2/lib/umd/single-spa.min.js",
-          "@angular/core": "https://cdn.jsdelivr.net/npm/@angular/core@8.2.0/bundles/core.umd.min.js",
-          "@angular/common": "https://cdn.jsdelivr.net/npm/@angular/common@8.2.0/bundles/common.umd.min.js",
-          "@angular/compiler": "https://cdn.jsdelivr.net/npm/@angular/compiler@8.2.0/bundles/compiler.umd.min.js",
-          "@angular/platform-browser": "https://cdn.jsdelivr.net/npm/@angular/platform-browser@8.2.1/bundles/platform-browser.umd.min.js",
-          "@angular/router": "https://cdn.jsdelivr.net/npm/@angular/router@8.2.0/bundles/router.umd.min.js",
-          "rxjs": "https://cdn.jsdelivr.net/npm/rxjs@6.4.0/bundles/rxjs.umd.min.js",
-          "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.6.3/system/es5/rxjs-operators.min.js"
-        }
-      }
-    </script>
   </head>
   <body>
     <app-root></app-root>
     <!-- <import-map-overrides-full></import-map-overrides-full> -->
-    <script>
-      System.import("single-spa").then(function (singleSpa) {
-        console.log("singleSpa", singleSpa);
-        singleSpa.registerApplication(
-          "child1",
-          () => System.import("http://localhost:3000/main.js"),
-          () => true
-        );
-
-        singleSpa.start();
-      });
-    </script>
   </body>
 </html>

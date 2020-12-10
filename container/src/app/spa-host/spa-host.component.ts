@@ -24,9 +24,9 @@ export class SpaHostComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.appName = this.route.snapshot.data.app;
-    // this.service
-    //   .mount(this.appName, this.appContainerRef.nativeElement)
-    //   .subscribe();
+    this.service
+      .mount(this.appName, this.appContainerRef.nativeElement)
+      .subscribe();
   }
 
   async ngOnDestroy() {

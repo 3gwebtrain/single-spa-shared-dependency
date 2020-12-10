@@ -7,7 +7,7 @@ import { APP_BASE_HREF } from "@angular/common";
 
 const routes: Routes = [
   {
-    path: "child1",
+    path: "",
     redirectTo: "child1/service",
     pathMatch: "full",
   },

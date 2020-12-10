@@ -1,5 +1,3 @@
-import "./set-public-path";
-
 import { enableProdMode, NgZone } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { Router } from "@angular/router";
@@ -7,6 +5,8 @@ import { AppModule } from "./app/app.module";
 import { environment } from "./environments/environment";
 import singleSpaAngular from "single-spa-angular";
 import { singleSpaPropsSubject } from "./single-spa/single-spa-props";
+
+const domElementGetter = () => document.getElementById("main");
 
 if (environment.production) {
   enableProdMode();
@@ -20,6 +20,7 @@ const lifecycles = singleSpaAngular({
   template: "<child1-root />",
   Router,
   NgZone,
+  domElementGetter,
 });
 
 export const bootstrap = lifecycles.bootstrap;
